@@ -1,3 +1,4 @@
+
 var yyy = document.getElementById('xxx') //从html获取canvas
 
 var context = yyy.getContext('2d') //声明上下文
