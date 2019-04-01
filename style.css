@@ -1,4 +1,5 @@
 *{margin: 0; border: 0;}
+body{overflow: hidden;}
 /* #xxx{background-image: linear-gradient(to right, #a3a7ac31 1px, transparent 1px),linear-gradient(to bottom, #a3a7ac31, transparent 1px);background-size: 20px 20px;} */
 #nav{position: fixed;}
 #leftNav{display: inline-block;}
