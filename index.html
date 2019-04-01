@@ -3,48 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style.css">
     <title>柠檬画板</title>
 </head>
 
 <body>
+    <canvas id="xxx"></canvas>
+
     <div id="nav">
         <div id="leftNav">
-            <button id="clear"><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-delete"></use>
-            </svg></button>
-            <button id="undo"><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-undo"></use>
-            </svg></button>
-            <button id="repeat"><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-redo"></use>
-            </svg></button>
+            <svg id="clear" class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-delete"></use>
+                </svg>
+            <svg id="undo" class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-undo"></use>
+                </svg>
+            <svg id="repeat" class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-redo"></use>
+                </svg>
         </div>
         <div id="mainNav">
-            <button id="pencil"><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-pencil"></use>
-            </svg></button>
-            <button id="eraser"><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-eraser"></use>
-            </svg></button>
-            <button id="thickness"><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-thickPencil"></use>
-            </svg></button>
+            <svg id="pencil" class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-pencil"></use>
+                </svg>
+            <svg id="eraser" class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-eraser"></use>
+                </svg>
+            <svg id="thickness" class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-thickPencil"></use>
+                </svg>
+
             <button id="blackPencil"></button>
             <button id="grayPencil"></button>
             <button id="bluePencil"></button>
             <button id="redPencil"></button>
             <button id="greenPencil"></button>
             <button id="yellowPencil"></button>
+
         </div>
-        <button id="save"><svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-save"></use>
-        </svg></button>
+        <svg id="save" class="icon" aria-hidden="true">
+                <use xlink:href="#icon-save"></use>
+            </svg>
     </div>
-    <canvas id="xxx">
-    </canvas>
+
     <script src="./main.js"></script>
     <script src="//at.alicdn.com/t/font_1120494_60pkj0oid5c.js"></script>
 </body>
