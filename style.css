@@ -1,12 +1,22 @@
 *{margin: 0; border: 0;}
+/* #xxx{background-image: linear-gradient(to right, #a3a7ac31 1px, transparent 1px),linear-gradient(to bottom, #a3a7ac31, transparent 1px);background-size: 20px 20px;} */
 #nav{position: fixed;}
 #leftNav{display: inline-block;}
 #mainNav{display: inline-block;}
-#xxx{
-    background-image: linear-gradient(to right, #a3a7ac31 1px, transparent 1px),
-    linear-gradient(to bottom, #a3a7ac31, transparent 1px);
-    background-size: 20px 20px;
-} 
+canvas {display: block;}
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+button{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    display: inline-block;
+}
 #blackPencil{
     width: 20px;
     height: 20px;
