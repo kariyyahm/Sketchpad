@@ -10,6 +10,7 @@ windowSize()
 
 window.onresize = function () {
     windowSize()
+    reWindowSize()
 }
 
 
@@ -19,13 +20,22 @@ var useEraser = false //声明橡皮的状态
 
 eraser.onclick = function () {
     useEraser = true
+    eraser.classList.add('activeBorder')
+    pencil.classList.remove('activeBorder')
+    thickPencil.classList.remove('activeBorder')
 }
 pencil.onclick = function () {
+    pencil.classList.add('activeBorder')
+    eraser.classList.remove('activeBorder')
+    thickPencil.classList.remove('activeBorder')
     useEraser = false
     lineWidth = 2
     radius = 1
 }
-thickness.onclick = function () {
+thickPencil.onclick = function () {
+    thickPencil.classList.add('activeBorder')
+    pencil.classList.remove('activeBorder')
+    eraser.classList.remove('activeBorder')
     useEraser = false
     lineWidth = 6
     radius = 3
@@ -34,31 +44,67 @@ blackPencil.onclick = function () {
     useEraser = false
     context.fillStyle = "black"
     context.strokeStyle = "black"
+    blackPencil.classList.add('activeScale')
+    grayPencil.classList.remove('activeScale')
+    bluePencil.classList.remove('activeScale')
+    redPencil.classList.remove('activeScale')
+    greenPencil.classList.remove('activeScale')
+    yellowPencil.classList.remove('activeScale')
 }
 grayPencil.onclick = function () {
     useEraser = false
     context.fillStyle = "#d8d8d8"
     context.strokeStyle = "#d8d8d8"
+    blackPencil.classList.remove('activeScale')
+    grayPencil.classList.add('activeScale')
+    bluePencil.classList.remove('activeScale')
+    redPencil.classList.remove('activeScale')
+    greenPencil.classList.remove('activeScale')
+    yellowPencil.classList.remove('activeScale')
 }
 bluePencil.onclick = function () {
     useEraser = false
     context.fillStyle = "#208BFF"
     context.strokeStyle = "#208BFF"
+    blackPencil.classList.remove('activeScale')
+    grayPencil.classList.remove('activeScale')
+    bluePencil.classList.add('activeScale')
+    redPencil.classList.remove('activeScale')
+    greenPencil.classList.remove('activeScale')
+    yellowPencil.classList.remove('activeScale')
 }
 redPencil.onclick = function () {
     useEraser = false
     context.fillStyle = "#FF2042"
     context.strokeStyle = "#FF2042"
+    blackPencil.classList.remove('activeScale')
+    grayPencil.classList.remove('activeScale')
+    bluePencil.classList.remove('activeScale')
+    redPencil.classList.add('activeScale')
+    greenPencil.classList.remove('activeScale')
+    yellowPencil.classList.remove('activeScale')
 }
 greenPencil.onclick = function () {
     useEraser = false
     context.fillStyle = "#2FD865"
     context.strokeStyle = "#2FD865"
+    blackPencil.classList.remove('activeScale')
+    grayPencil.classList.remove('activeScale')
+    bluePencil.classList.remove('activeScale')
+    redPencil.classList.remove('activeScale')
+    greenPencil.classList.add('activeScale')
+    yellowPencil.classList.remove('activeScale')
 }
 yellowPencil.onclick = function () {
     useEraser = false
     context.fillStyle = "#FFDC36"
     context.strokeStyle = "#FFDC36"
+    blackPencil.classList.remove('activeScale')
+    grayPencil.classList.remove('activeScale')
+    bluePencil.classList.remove('activeScale')
+    redPencil.classList.remove('activeScale')
+    greenPencil.classList.remove('activeScale')
+    yellowPencil.classList.add('activeScale')
 }
 
 clear.onclick = function () {
@@ -76,10 +122,16 @@ function cPush() {
         cPushArray.length = cStep;
     }
     cPushArray.push(yyy.toDataURL())
-    console.log(cPushArray.length)
-    console.log(yyy.toDataURL())
 }
+function reWindowSize() {
+    if (cStep > 0) {
+        var canvasPic = new Image();
+        canvasPic.src = cPushArray[cStep];
+        canvasPic.onload = function () { context.drawImage(canvasPic, 0, 0); }
+        /*document.title = cStep + ":" + cPushArray.length;*/
+    }
 
+}
 undo.onclick = function cUndo() {
     if (cStep > 0) {
         cStep--;
@@ -171,7 +223,6 @@ if (document.body.ontouchstart !== undefined) {
     yyy.onmouseup = function (aaa) {
         using = false
         cPush()
-        console.log('songkaix')
     }
     yyy.onmouseleave = function (aaa) {
         if (using) {
@@ -180,13 +231,11 @@ if (document.body.ontouchstart !== undefined) {
         }
     }
     drawImage()
-    console.log('songkaix')
 }
 
 
 
 function drawImage() {
-    console.log('xx')
     var image = new Image();
     image.src = 'img/bg.jpg';
     image.onload = function () {

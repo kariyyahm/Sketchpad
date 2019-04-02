@@ -2,61 +2,24 @@
 ul,ol{list-style: none;}
 body{overflow: hidden;}
 /* #xxx{background-image: linear-gradient(to right, #a3a7ac31 1px, transparent 1px),linear-gradient(to bottom, #a3a7ac31, transparent 1px);background-size: 20px 20px;} */
-#nav{position: fixed; top: 0; left: 0; padding: 20px;}
-#leftNav{display: inline-block;}
-#mainNav{display: inline-block;}
+#nav{position: fixed; top: 0; margin:0 auto;right:0; padding: 10px;}
+#leftNav{display: inline-block; margin-right: 8px;}
+#mainNav{display: inline-block; margin-right: 8px;}
 canvas {display: block;position: fixed; top: 0; left: 0; }
 .icon {
     width: 20px; height: 20px;
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
  }
- ol{
-    display: inline-block;
-    list-style-type:none;
- }
-button{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: white;
-    display: inline-block;
-
+.icon:hover{
+    transform: scale(1.2);
 }
-#blackPencil{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: black;
+.icon.activeBorder{
+    border-bottom: 0.5px solid black;
 }
-#grayPencil{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #d8d8d8;
-}
-#bluePencil{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #208BFF;
-}
-#redPencil{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #FF2042;
-}
-#greenPencil{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #2FD865;
-}
-#yellowPencil{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #FFDC36;
+.icon.activeScale{
+    transform: scale(1.2);
 }
