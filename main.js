@@ -53,8 +53,8 @@ blackPencil.onclick = function () {
 }
 grayPencil.onclick = function () {
     useEraser = false
-    context.fillStyle = "#d8d8d8"
-    context.strokeStyle = "#d8d8d8"
+    context.fillStyle = "#7C91C0"
+    context.strokeStyle = "#7C91C0"
     blackPencil.classList.remove('activeScale')
     grayPencil.classList.add('activeScale')
     bluePencil.classList.remove('activeScale')
